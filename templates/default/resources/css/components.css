@@ -9,11 +9,11 @@
  */
 
 #nprogress {
-	@apply pointer-events-none;
+  @apply pointer-events-none;
 
-	.bar {
-		@apply fixed top-0 left-0 w-screen bg-indigo-400;
-		height: 2px;
-		z-index: 4096;
-	}
+  .bar {
+    @apply fixed top-0 left-0 w-screen bg-indigo-400;
+    height: 2px;
+    z-index: 4096;
+  }
 }

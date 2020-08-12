@@ -1,5 +1,5 @@
-const mix = require('laravel-mix');
-const { plugins } = require('./postcss.config');
+const mix = require('laravel-mix')
+const { plugins } = require('./postcss.config')
 
 /*
  |--------------------------------------------------------------------------
@@ -13,19 +13,19 @@ const { plugins } = require('./postcss.config');
  */
 
 mix
-	.js('resources/js/app.js', 'public/build')
-	.postCss('resources/css/app.css', 'public/build', plugins)
-	.webpackConfig({
-		output: { chunkFilename: '[name].js?id=[chunkhash]' },
-		resolve: {
-			alias: {
-				vue$: 'vue/dist/vue.runtime.esm.js',
-				'@': path.resolve('resources/js'),
-			},
-		},
-	})
-	.sourceMaps();
+  .js('resources/js/app.js', 'public/js')
+  .postCss('resources/css/app.css', 'public/css', plugins)
+  .webpackConfig({
+    output: { chunkFilename: '[name].js?id=[chunkhash]' },
+    resolve: {
+      alias: {
+        vue$: 'vue/dist/vue.runtime.esm.js',
+        '@': path.resolve('resources/js'),
+      },
+    },
+  })
+  .sourceMaps()
 
 if (mix.inProduction()) {
-	mix.version();
+  mix.version()
 }

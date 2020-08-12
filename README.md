@@ -1,25 +1,18 @@
 <p align="center">
-  <h1 align="center">Laravel Inertia</h1>
+  <h1 align="center">Laravel Inertia - Lucas</h1>
   <p align="center">
-    <a href="https://github.com/use-preset/use-preset/actions">
-      <img alt="Build status" src="https://github.com/use-preset/laravel-inertia/workflows/tests/badge.svg">
-    </a>
+    <a href="https://github.com/use-preset/use-preset/releases"><img alt="npx use-preset ycs77/preset-laravel-inertia" src="https://img.shields.io/badge/use--preset-laravel--inertia-blue?style=flat-square"></a>
     &nbsp;
-    <a href="https://github.com/use-preset/use-preset/releases">
-      <img alt="npx use-preset laravel-inertia" src="https://img.shields.io/badge/use--preset-laravel--inertia-blue">
-    </a>
-    &nbsp;
-    <a href="https://www.npmjs.com/package/use-preset">
-      <img alt="use-preset version" src="https://img.shields.io/npm/v/use-preset?color=32c854&label=use-preset">
-    </a>
+    <a href="https://www.npmjs.com/package/use-preset"><img alt="use-preset version" src="https://img.shields.io/npm/v/use-preset?color=32c854&style=flat-square&label=use-preset"></a>
   </p>
   <br />
   <p align="center">
     <b>Preset</b> is a project-modifying tool. <a href="https://usepreset.dev/">Read the documentation</a> for more information.
   </p>
   <br />
-  <pre align="center">npx use-preset laravel-inertia</pre>
-  &nbsp;
+  <pre align="center">npx use-preset ycs77/preset-laravel-inertia</pre>
+  <br />
+  <p align="center">See more <a href="https://github.com/ycs77/presets-list">Lucas's Presets</a></p>
 <p>
 
 # About
@@ -39,7 +32,7 @@ This preset is intended to be installed into a fresh Laravel application. Follow
 **Then, run the following command**:
 
 ```bash
-npx use-preset laravel-inertia
+npx use-preset ycs77/preset-laravel-inertia
 ```
 
 By default, the preset installs the VILT stack. If you wish to not use Vue, you can use the `--no-vue` flag.
@@ -53,9 +46,3 @@ The authentication system is copied into your project, so you don't need to use 
 Code-splitting should be enabled if you have a large application. When code-splitting is used, it requires that the user download new assets as they navigate from one page to the next, which adds latency. When it is not, the first page load may take longer. This is a trade-off.
 
 To enable code-splitting, uncomment the line in your `app.js` that makes `resolveComponent` use `import`, and remove the previous line. For more information, check out the [instructions](https://inertiajs.com/client-side-setup#code-splitting) on the Inertia documentation.
-
-# To-do
-
-- Add a React scaffolding (contributions welcome!)
-- Add register, confirm password, reset password, send verification email, and verify email functionalities
-- Organize Vue's authentication scaffolding into components
