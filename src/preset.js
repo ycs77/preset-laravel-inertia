@@ -77,6 +77,11 @@ module.exports = Preset.make('Laravel Inertia')
   .edit('app/Providers/RouteServiceProvider.php')
     .title('Update route configuration')
     .replace(`public const HOME = '/home';`).with(`public const HOME = '/';`)
+    .chain()
+
+  .edit('app/Providers/RouteServiceProvider.php')
+    .title('Remove routes namespace prefix')
+    .if(({ flags }) => Boolean(flags.auth))
     .replace(`$namespace = 'App\\Http\\Controllers'`).with(`$namespace = ''`)
     .chain()
 
