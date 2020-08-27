@@ -15,10 +15,10 @@ module.exports = Preset.make('Laravel Inertia')
     .title('Add Node dependencies')
     .merge({
       devDependencies: {
-        '@inertiajs/inertia': '^0.1',
-        '@inertiajs/inertia-vue': '^0.1',
+        '@inertiajs/inertia': '^0.2',
+        '@inertiajs/inertia-vue': '^0.2',
         'vue-template-compiler': '^2.6.11',
-        'vue-meta': '^2.3',
+        'vue-meta': '^2.4',
         vue: '^2.6.11'
       }
     })
