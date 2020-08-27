@@ -20,9 +20,9 @@ mix
     resolve: {
       alias: {
         vue$: 'vue/dist/vue.runtime.esm.js',
-        '@': path.resolve('resources/js'),
-      },
-    },
+        '@': path.resolve('resources/js')
+      }
+    }
   })
   .sourceMaps()
 

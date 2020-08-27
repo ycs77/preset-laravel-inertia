@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
 
-    <!-- Register CSS and JS -->
+    <!-- Styles -->
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
+
+    <!-- Scripts -->
     <script src="{{ mix('/js/app.js') }}" defer></script>
 </head>
 

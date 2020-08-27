@@ -9,9 +9,6 @@ use Inertia\Inertia;
 
 class InertiaServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     */
     public function register()
     {
         $this->registerMixVersion();
@@ -19,9 +16,6 @@ class InertiaServiceProvider extends ServiceProvider
         $this->shareFlashes();
     }
 
-    /**
-     * Sets the mix version from the manifest.
-     */
     public function registerMixVersion()
     {
         Inertia::version(function () {
@@ -29,9 +23,6 @@ class InertiaServiceProvider extends ServiceProvider
         });
     }
 
-    /**
-     * Share authentification data.
-     */
     public function shareAuthentification()
     {
         Inertia::share([
@@ -47,9 +38,6 @@ class InertiaServiceProvider extends ServiceProvider
         ]);
     }
 
-    /**
-     * Share flashes and errors.
-     */
     public function shareFlashes()
     {
         Inertia::share([
