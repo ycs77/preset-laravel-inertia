@@ -31,10 +31,10 @@ class InertiaServiceProvider extends ServiceProvider
                     'user' => Auth::user() ? [
                         'id' => Auth::user()->id,
                         'name' => Auth::user()->name,
-                        'email' => Auth::user()->email
-                    ] : null
+                        'email' => Auth::user()->email,
+                    ] : null,
                 ];
-            }
+            },
         ]);
     }
 
@@ -44,14 +44,14 @@ class InertiaServiceProvider extends ServiceProvider
             'flash' => function () {
                 return [
                     'success' => Session::get('success'),
-                    'error'   => Session::get('error')
+                    'error'   => Session::get('error'),
                 ];
             },
             'errors' => function () {
                 return Session::get('errors')
                     ? Session::get('errors')->getBag('default')->getMessages()
                     : (object) [];
-            }
+            },
         ]);
     }
 }
