@@ -4,7 +4,7 @@ Preset.setName('Inertia.js for Laravel')
 Preset.option('init', true)
 
 Preset.apply('ycs77/preset-laravel')
-  .with(['--no-interaction', '--no-install'])
+  .with('--no-interaction')
   .ifOption('init')
 
 Preset.apply('ycs77/preset-laravel-tailwindcss')
