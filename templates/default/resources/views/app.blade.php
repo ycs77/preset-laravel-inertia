@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html class="h-full min-h-screen antialiased">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+    <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
@@ -15,7 +12,7 @@
     <script src="{{ mix('/js/app.js') }}" defer></script>
 </head>
 
-<body class="h-full">
+<body class="font-sans antialiased">
     @inertia
 </body>
 </html>
