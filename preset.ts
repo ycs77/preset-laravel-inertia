@@ -53,6 +53,21 @@ Preset.group((preset) => {
     .addDev('@vue/compiler-sfc', '^3.0.0')
     .addDev('vue-loader', '^16.0.0')
 
+  preset.edit('package.json')
+    .update(original => {
+      let content = JSON.parse(original)
+      const indent = original.match(/^{\r?\n([ \t]+)/)[1]
+      const sortProps = ['dependencies', 'devDependencies']
+      sortProps.forEach(prop => {
+        if (!content[prop]) return
+        content[prop] = Object.keys(content[prop]).sort().reduce((obj, key) => {
+          obj[key] = content[prop][key]
+          return obj
+        }, {})
+      })
+      return JSON.stringify(content, null, indent)+'\n'
+    })
+
   preset
     .editPhpPackages()
     .add('inertiajs/inertia-laravel', '^0.4.2')
