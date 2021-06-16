@@ -78,8 +78,8 @@ Preset.group((preset) => {
     .add('inertiajs/inertia-laravel', '^0.4.2')
 }).withTitle('Updating dependencies...')
 
-Preset.installDependencies('node').ifOption('install')
-Preset.installDependencies('php').ifOption('install')
+Preset.installDependencies('node').withoutTitle().ifOption('install')
+Preset.installDependencies('php').withoutTitle().ifOption('install')
 
 Preset.instruct([
   `Run ${color.magenta('npm run dev')} or ${color.magenta('yarn dev')}`,
