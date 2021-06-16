@@ -2,6 +2,7 @@ import { color, Preset } from 'apply'
 
 Preset.setName('Inertia.js for Laravel')
 Preset.option('init', true)
+Preset.option('install', true)
 
 Preset.apply('ycs77/preset-laravel')
   .with('--no-interaction')
@@ -53,17 +54,21 @@ Preset.group((preset) => {
     .addDev('@vue/compiler-sfc', '^3.0.0')
     .addDev('vue-loader', '^16.0.0')
 
+  // Sort node dependencies...
   preset.edit('package.json')
     .update(original => {
       let content = JSON.parse(original)
       const indent = original.match(/^{\r?\n([ \t]+)/)[1]
-      const sortProps = ['dependencies', 'devDependencies']
-      sortProps.forEach(prop => {
-        if (!content[prop]) return
-        content[prop] = Object.keys(content[prop]).sort().reduce((obj, key) => {
-          obj[key] = content[prop][key]
+      const sortObject = (unsortObj: object, compareFn?: (a: string, b: string) => number) => Object
+        .keys(unsortObj).sort(compareFn).reduce((obj, key) => {
+          obj[key] = unsortObj[key]
           return obj
         }, {})
+      const sortProps = ['dependencies', 'devDependencies']
+      content = sortObject(content, (a, b) => a === sortProps[0] && b === sortProps[1] ? -1 : 1)
+      sortProps.forEach(prop => {
+        if (!content[prop]) return
+        content[prop] = sortObject(content[prop])
       })
       return JSON.stringify(content, null, indent)+'\n'
     })
@@ -73,8 +78,8 @@ Preset.group((preset) => {
     .add('inertiajs/inertia-laravel', '^0.4.2')
 }).withTitle('Updating dependencies...')
 
-Preset.installDependencies('node').ifUserApproves().withoutTitle()
-Preset.installDependencies('php').ifUserApproves().withoutTitle()
+Preset.installDependencies('node').ifOption('install')
+Preset.installDependencies('php').ifOption('install')
 
 Preset.instruct([
   `Run ${color.magenta('npm run dev')} or ${color.magenta('yarn dev')}`,
