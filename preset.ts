@@ -2,6 +2,7 @@ import { color, Preset } from 'apply'
 
 Preset.setName('Inertia.js for Laravel')
 Preset.option('init', true)
+Preset.option('tailwind', true)
 Preset.option('install', true)
 
 Preset.apply('ycs77/preset-laravel')
@@ -10,6 +11,7 @@ Preset.apply('ycs77/preset-laravel')
 
 Preset.apply('ycs77/preset-laravel-tailwindcss')
   .with(['--no-interaction', '--no-init', '--no-install'])
+  .ifOption('tailwind')
 
 Preset.delete(['resources/js', 'resources/views']).withoutTitle()
 
