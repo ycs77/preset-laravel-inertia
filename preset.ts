@@ -48,8 +48,8 @@ Preset.group((preset) => {
 Preset.group((preset) => {
   preset
     .editNodePackages()
-    .add('@inertiajs/inertia', '^0.9.2')
-    .add('@inertiajs/inertia-vue3', '^0.4.7')
+    .add('@inertiajs/inertia', '^0.10.0')
+    .add('@inertiajs/inertia-vue3', '^0.5.0')
     .add('vue', '^3.0.0')
     .addDev('@vue/compiler-sfc', '^3.0.0')
     .addDev('vue-loader', '^16.0.0')
